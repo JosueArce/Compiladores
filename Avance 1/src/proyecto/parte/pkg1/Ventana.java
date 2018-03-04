@@ -26,12 +26,18 @@ public class Ventana extends javax.swing.JFrame {
         btnRun.setOpaque(false);
         btnRun.setContentAreaFilled(false);
         btnRun.setBorderPainted(false);
+        btnRun.setToolTipText("Compilar");
+        
         btnLoad.setOpaque(false);
         btnLoad.setContentAreaFilled(false);
         btnLoad.setBorderPainted(false);
+        btnLoad.setToolTipText("Cargar Archivo");
+        
         btnAST.setOpaque(false);
         btnAST.setContentAreaFilled(false);
         btnAST.setBorderPainted(false);
+        btnAST.setToolTipText("Generar AST");
+        
         
         
     }
