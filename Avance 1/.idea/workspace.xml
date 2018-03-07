@@ -132,7 +132,6 @@
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -440,7 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parser2.g4">
     <entry file="file://$PROJECT_DIR$/src/proyecto/parte/pkg1/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
