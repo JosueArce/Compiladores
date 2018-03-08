@@ -21,7 +21,6 @@ PARCUADIZQ : '[';//parentesis izquierdo
 PARCUADDER : ']';//parentesis derecho
 CORCHETEIZQ : '{';
 CORCHETEDER : '}';
-VACIO : 'ε';
 COMILLADOBLE : '"';
 INICIOCOMANI : '/*';//inicio de comentario anidado
 FINCOMANI : '*/';//fin de comentario anidado
