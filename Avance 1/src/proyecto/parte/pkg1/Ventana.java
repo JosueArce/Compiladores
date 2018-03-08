@@ -5,12 +5,12 @@
  */
 package proyecto.parte.pkg1;
 
-import java.awt.TextArea;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import javax.swing.JFileChooser;
 import javax.swing.JTextArea;
 import javax.swing.text.Element;
-import javax.swing.text.Utilities;
 
 /**
  *
@@ -37,8 +37,11 @@ public class Ventana extends javax.swing.JFrame {
         btnAST.setContentAreaFilled(false);
         btnAST.setBorderPainted(false);
         btnAST.setToolTipText("Generar AST");
+        txtCodigo.setText("hola esto es un \n ejemplo");
         
-        
+        //JScrollPane scroll = new JScrollPane(txtCodigo);
+        TextLineNumber tln = new TextLineNumber(txtCodigo);
+        scroll.setRowHeaderView( tln );
         
     }
 
@@ -68,9 +71,9 @@ public class Ventana extends javax.swing.JFrame {
         btnLoad = new javax.swing.JButton();
         btnAST = new javax.swing.JButton();
         btnInterpretarInstrucciones = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtCodigo = new javax.swing.JTextArea();
-        lblLineas = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtCodigo = new javax.swing.JTextPane();
+        scroll = new javax.swing.JScrollPane(txtCodigo);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Analizador Sintáctico");
@@ -105,60 +108,56 @@ public class Ventana extends javax.swing.JFrame {
 
         btnInterpretarInstrucciones.setText("Interpretar Instrucciones");
 
-        txtCodigo.setColumns(20);
-        txtCodigo.setRows(5);
-        jScrollPane1.setViewportView(txtCodigo);
-
-        lblLineas.setText("jLabel2");
+        jScrollPane3.setViewportView(txtCodigo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(btnInterpretarInstrucciones)
-                        .addGap(63, 63, 63)
-                        .addComponent(lblLineas)
-                        .addContainerGap(370, Short.MAX_VALUE))
+                        .addContainerGap(650, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane2)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRun, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAST, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRun, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLoad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAST, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRun, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAST, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 174, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                        .addGap(0, 224, Short.MAX_VALUE))
+                    .addComponent(scroll))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInterpretarInstrucciones)
-                    .addComponent(lblLineas))
+                .addComponent(btnInterpretarInstrucciones)
                 .addGap(6, 6, 6))
         );
 
@@ -174,9 +173,22 @@ public class Ventana extends javax.swing.JFrame {
         JFileChooser cargar = new JFileChooser();
         cargar.showOpenDialog(null);
         File archivo = cargar.getSelectedFile();
-        String nombreArchivo = archivo.getName();
-        String path = archivo.getAbsolutePath();
-        txtConsola.append("\nSe ha abierto el archivo "+nombreArchivo+" desde "+path);
+        if(archivo.getName()!=null){
+            
+        }
+        try
+                {
+                    String nombreArchivo = archivo.getName();
+                    String path = archivo.getAbsolutePath();
+                    txtConsola.append("\nSe ha abierto el archivo "+nombreArchivo+" desde "+path);
+                    FileReader reader = new FileReader( archivo.getAbsolutePath() );
+                    BufferedReader br = new BufferedReader(reader);
+                    txtCodigo.read( br, null );
+                    br.close();
+                    txtCodigo.requestFocus();
+                }
+                catch(Exception e2) { System.out.println(e2); }
+        
     }//GEN-LAST:event_btnLoadActionPerformed
 
     private void btnASTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnASTActionPerformed
@@ -227,10 +239,10 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton btnLoad;
     private javax.swing.JButton btnRun;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private static javax.swing.JLabel lblLineas;
-    private static javax.swing.JTextArea txtCodigo;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane scroll;
+    private javax.swing.JTextPane txtCodigo;
     private javax.swing.JTextArea txtConsola;
     // End of variables declaration//GEN-END:variables
 }
