@@ -5,11 +5,21 @@
  */
 package proyecto.parte.pkg1;
 
+import generated.Parser2;
+import generated.Scanner;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.RecognitionException;
+import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.tree.ParseTree;
+
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -21,12 +31,13 @@ import javax.swing.text.Element;
  * @author Daniel
  */
 public class Ventana extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Ventana
-     */
+    
+    File archivo;
     public Ventana() {
         initComponents();
+        
+        archivo= new File("test.txt");
+        
         btnRun.setOpaque(false);
         btnRun.setContentAreaFilled(false);
         btnRun.setBorderPainted(false);
@@ -42,18 +53,23 @@ public class Ventana extends javax.swing.JFrame {
         btnAST.setBorderPainted(false);
         btnAST.setToolTipText("Generar AST");
         txtCodigo.setText("hola esto es un \n ejemplo");
+        //txtCodigo.setMinimumSize(new Dimension(200, 200));
         
         //JScrollPane scroll = new JScrollPane(txtCodigo);
         TextLineNumber tln = new TextLineNumber(txtCodigo);
-        scroll.setRowHeaderView( tln );
+        scroll.setRowHeaderView(tln);
+        
+        /*
         JPanel gridCodigoYNumLinea = new JPanel();
+        //gridCodigoYNumLinea.setMaximumSize(new Dimension(this.getWidth(), this.getHeight()/2));
+        //gridCodigoYNumLinea.setMinimumSize(gridCodigoYNumLinea.getMaximumSize());
         gridCodigoYNumLinea.setLayout(new GridLayout(1,2));
         gridCodigoYNumLinea.add(scroll,BorderLayout.WEST);
         gridCodigoYNumLinea.add(txtCodigo,BorderLayout.EAST);
         
-        JPanel gridConsola = new JPanel();
-        gridConsola.setLayout(new GridLayout(1, 1));
-        gridConsola.add(txtConsola,BorderLayout.CENTER);
+        //JPanel gridConsola = new JPanel();
+        //gridConsola.setLayout(new GridLayout(1, 1));
+        //gridConsola.add(txtConsola,BorderLayout.CENTER);
         
         JPanel gridBotones = new JPanel();
         gridBotones.setLayout(new GridLayout(1, 4));
@@ -62,11 +78,16 @@ public class Ventana extends javax.swing.JFrame {
         gridBotones.add(btnLoad);
         gridBotones.add(btnAST);
         
-        this.setLayout(new BorderLayout(10, 10));
-        this.add(new JScrollPane(gridCodigoYNumLinea), BorderLayout.CENTER);
-        this.add(gridConsola, BorderLayout.PAGE_END);
-        this.add(gridBotones, BorderLayout.PAGE_END);
+        JPanel todos = new JPanel();
+        todos.add(new JScrollPane(gridCodigoYNumLinea));
+        //todos.add(gridConsola);
+        todos.add(gridBotones);
         
+        this.setLayout(new BorderLayout());
+        this.add(todos,BorderLayout.CENTER);
+        //this.add(gridConsola,BorderLayout.AFTER_LAST_LINE);
+        //this.add(gridBotones,BorderLayout.AFTER_LAST_LINE);
+        */
     }
 
     
@@ -190,13 +211,36 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btnRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRunActionPerformed
         txtConsola.append("Running...");
-        txtConsola.append("\nCompilación Exitosa!");
+        Scanner scanner = null;
+        Parser2 parser = null;
+        ANTLRInputStream input=null;
+        CommonTokenStream tokens = null;
+        try {
+            input = new ANTLRInputStream(new FileReader(archivo.getAbsolutePath()));
+            scanner = new Scanner(input);
+            tokens = new CommonTokenStream(scanner);
+            parser = new Parser2(tokens);
+        }
+        catch(Exception e){System.out.println("No hay archivo");}
+
+        List<Token> lista = (List<Token>) scanner.getAllTokens();
+
+        for (Token t : lista)
+
+            txtConsola.append(t.getType() + ":" + t.getText() + "\n");
+        scanner.reset();
+
+        try{
+            ParseTree tree = parser.program();
+        }catch (RecognitionException e){
+            txtConsola.append("Compilacion Fallida!");
+        }
     }//GEN-LAST:event_btnRunActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
         JFileChooser cargar = new JFileChooser();
         cargar.showOpenDialog(null);
-        File archivo = cargar.getSelectedFile();
+        archivo = cargar.getSelectedFile();
         if(archivo.getName()!=null){
             
         }
