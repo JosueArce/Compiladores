@@ -7,22 +7,12 @@ package proyecto.parte.pkg1;
 
 import generated.Parser2;
 import generated.Scanner;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.List;
 import javax.swing.JFileChooser;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.text.Element;
 
@@ -210,13 +200,24 @@ public class Ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRunActionPerformed
-        txtConsola.append("Running...");
+        txtConsola.setText("Running...\n");
+
+        try
+        {
+            FileWriter pw = new FileWriter ("test.txt");
+            txtCodigo.write(pw);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
         Scanner scanner = null;
         Parser2 parser = null;
         ANTLRInputStream input=null;
         CommonTokenStream tokens = null;
         try {
-            input = new ANTLRInputStream(new FileReader(archivo.getAbsolutePath()));
+            input = new ANTLRInputStream(new FileReader("test.txt"));//archivo.getAbsolutePath()));
             scanner = new Scanner(input);
             tokens = new CommonTokenStream(scanner);
             parser = new Parser2(tokens);
@@ -248,7 +249,7 @@ public class Ventana extends javax.swing.JFrame {
                 {
                     String nombreArchivo = archivo.getName();
                     String path = archivo.getAbsolutePath();
-                    txtConsola.append("\nSe ha abierto el archivo "+nombreArchivo+" desde "+path);
+                    txtConsola.setText("\nSe ha abierto el archivo "+nombreArchivo+" desde "+path);
                     FileReader reader = new FileReader( archivo.getAbsolutePath() );
                     BufferedReader br = new BufferedReader(reader);
                     txtCodigo.read( br, null );

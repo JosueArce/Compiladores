@@ -51,6 +51,9 @@ ID : LETTER (LETTER|DIGIT)*;//expresion regular para reconocer identificadores
 fragment LETTER : 'a'..'z'| 'A'..'Z';//macro para reconocer letras
 fragment DIGIT : '0'..'9';//macro para reconocer letras
 
+COMENTARIO_LINEA:   '//'.*?'\r'?'\n' -> skip ;
+
+COMENTARIO_MULTILINEA: '/*'( COMENTARIO_MULTILINEA | . )*?'*/' -> skip;
 WS : [ \t\n\r]+ -> skip; //expresion regular para el espacio en blanco. El skip significa que ignora lo que reconoció. El + significa
                         //una o más veces
 LINE_COMMENT : '//' ~[\r\n]* '\r'? '\n' -> channel(HIDDEN);//posible comentario de linea extraido de> https://stackoverflow.com/questions/16496579/matching-arbitrary-text-both-symbols-and-spaces-with-antlr
