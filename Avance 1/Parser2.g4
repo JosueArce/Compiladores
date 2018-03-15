@@ -18,7 +18,7 @@ multiplicationFactor : ((MUL|DIV) elementExpression)*;
 elementExpression :  primitiveExpression (elementAccess | callExpression |);
 elementAccess : PARCUADIZQ expression PARCUADDER;
 callExpression	: PARIZQ expressionList PARDER;
-primitiveExpression	: INT | STRING | ID | TRUE | FALSE | PARIZQ expression PARDER | arrayLiteral | arrayFunctions PARIZQ expressionList PARDER | functionLiteral | hashLiteral | printExpression | ifExpression;
+primitiveExpression	: NUM | STR | ID | TRUE | FALSE | PARIZQ expression PARDER | arrayLiteral | arrayFunctions PARIZQ expressionList PARDER | functionLiteral | hashLiteral | printExpression | ifExpression;
 arrayFunctions	: LEN | FIRST | LAST | REST | PUSH;
 arrayLiteral : PARCUADIZQ expressionList PARCUADDER;
 functionLiteral	: FN PARIZQ functionParameters PARDER blockStatement;

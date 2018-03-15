@@ -12,8 +12,8 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.io.*;
 import java.util.List;
-import javax.swing.JFileChooser;
-import javax.swing.JTextArea;
+import java.util.concurrent.ExecutionException;
+import javax.swing.*;
 import javax.swing.text.Element;
 
 /**
@@ -23,6 +23,8 @@ import javax.swing.text.Element;
 public class Ventana extends javax.swing.JFrame {
     
     File archivo;
+    ParseTree tree;
+    Parser2 parser;
     public Ventana() {
         initComponents();
         
@@ -42,7 +44,6 @@ public class Ventana extends javax.swing.JFrame {
         btnAST.setContentAreaFilled(false);
         btnAST.setBorderPainted(false);
         btnAST.setToolTipText("Generar AST");
-        txtCodigo.setText("hola esto es un \n ejemplo");
         //txtCodigo.setMinimumSize(new Dimension(200, 200));
         
         //JScrollPane scroll = new JScrollPane(txtCodigo);
@@ -143,6 +144,7 @@ public class Ventana extends javax.swing.JFrame {
 
         btnInterpretarInstrucciones.setText("Interpretar Instrucciones");
 
+        txtCodigo.setText("let age = 1;\nlet name = \"Monkey\";\nlet result = 10 * (20 / 2);\n\nlet myArray = [1, 2, 3, 4, 5];\n\nlet thorsten = {\"name\": \"Thorsten\", \"age\": 28};\n\nmyArray[0] // => 1\nthorsten[\"name\"] // => \"Thorsten\"\n\nlet add = fn(a, b) { return a + b; };\n\nlet fibonacci = fn(x) {\nif (x == 0) {\n0\n} else {\nif (x == 1) {\n1\n} else {\nfibonacci(x - 1) + fibonacci(x - 2);\n}\n}\n};\n");
         jScrollPane3.setViewportView(txtCodigo);
 
         scroll.setAutoscrolls(true);
@@ -152,12 +154,13 @@ public class Ventana extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(btnInterpretarInstrucciones)
-                        .addContainerGap(650, Short.MAX_VALUE))
+                        .addContainerGap(616, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -168,22 +171,18 @@ public class Ventana extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAST, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnAST, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3))
                         .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
-                    .addComponent(scroll))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scroll)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnAST, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,7 +212,7 @@ public class Ventana extends javax.swing.JFrame {
         }
 
         Scanner scanner = null;
-        Parser2 parser = null;
+        parser = null;
         ANTLRInputStream input=null;
         CommonTokenStream tokens = null;
         try {
@@ -222,7 +221,7 @@ public class Ventana extends javax.swing.JFrame {
             tokens = new CommonTokenStream(scanner);
             parser = new Parser2(tokens);
         }
-        catch(Exception e){System.out.println("No hay archivo");}
+        catch(Exception e){txtConsola.append("No hay archivo");}
 
         List<Token> lista = (List<Token>) scanner.getAllTokens();
 
@@ -232,7 +231,8 @@ public class Ventana extends javax.swing.JFrame {
         scanner.reset();
 
         try{
-            ParseTree tree = parser.program();
+            tree = parser.program();
+
         }catch (RecognitionException e){
             txtConsola.append("Compilacion Fallida!");
         }
@@ -262,8 +262,15 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btnASTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnASTActionPerformed
         txtConsola.append("\nCargando AST...");
-        AST ast = new AST(this, rootPaneCheckingEnabled);
-        ast.setVisible(true);
+        //AST ast = new AST(this, rootPaneCheckingEnabled);
+        //ast.setVisible(true);
+        try{
+            java.util.concurrent.Future<JFrame> treeGUI = org.antlr.v4.gui.Trees.inspect(tree,parser);
+            treeGUI.get().setVisible(true);
+        }catch (Exception e){
+            txtConsola.append(e.getMessage());
+        }
+
     }//GEN-LAST:event_btnASTActionPerformed
 
     /**

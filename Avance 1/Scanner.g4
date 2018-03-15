@@ -45,7 +45,8 @@ REST : 'rest';
 PUSH : 'push';
 
 
-
+NUM: '0' | '1'..'9' ('0'..'9')*;
+STR : '"' ('""'|~'"')* '"' ;
 ID : LETTER (LETTER|DIGIT)*;//expresion regular para reconocer identificadores
 
 fragment LETTER : 'a'..'z'| 'A'..'Z';//macro para reconocer letras
