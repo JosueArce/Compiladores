@@ -25,6 +25,7 @@ public class Ventana extends javax.swing.JFrame {
     File archivo;
     ParseTree tree;
     Parser2 parser;
+    java.util.concurrent.Future<JFrame> treeGUI;
     public Ventana() {
         initComponents();
         
@@ -233,8 +234,9 @@ public class Ventana extends javax.swing.JFrame {
         try{
             tree = parser.program();
 
-        }catch (RecognitionException e){
-            txtConsola.append("Compilacion Fallida!");
+
+        }catch (Exception e){
+            txtConsola.append(e.getMessage());
         }
     }//GEN-LAST:event_btnRunActionPerformed
 
@@ -265,8 +267,7 @@ public class Ventana extends javax.swing.JFrame {
         //AST ast = new AST(this, rootPaneCheckingEnabled);
         //ast.setVisible(true);
         try{
-            java.util.concurrent.Future<JFrame> treeGUI = org.antlr.v4.gui.Trees.inspect(tree,parser);
-            treeGUI.get().setVisible(true);
+            treeGUI = org.antlr.v4.gui.Trees.inspect(tree,parser);
         }catch (Exception e){
             txtConsola.append(e.getMessage());
         }
