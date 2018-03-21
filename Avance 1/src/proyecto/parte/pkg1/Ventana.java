@@ -223,21 +223,22 @@ public class Ventana extends javax.swing.JFrame {
             parser = new Parser2(tokens);
         }
         catch(Exception e){txtConsola.append("No hay archivo");}
-
+/*
         List<Token> lista = (List<Token>) scanner.getAllTokens();
 
         for (Token t : lista)
 
             txtConsola.append(t.getType() + ":" + t.getText() + "\n");
         scanner.reset();
-
+*/
         try{
             tree = parser.program();
-
+            txtConsola.append("Compilacion Exitosa!");
 
         }catch (Exception e){
             txtConsola.append(e.getMessage());
         }
+
     }//GEN-LAST:event_btnRunActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
@@ -245,21 +246,21 @@ public class Ventana extends javax.swing.JFrame {
         cargar.showOpenDialog(null);
         archivo = cargar.getSelectedFile();
         if(archivo.getName()!=null){
-            
+            try
+            {
+                String nombreArchivo = archivo.getName();
+                String path = archivo.getAbsolutePath();
+                txtConsola.setText("\nSe ha abierto el archivo "+nombreArchivo+" desde "+path);
+                FileReader reader = new FileReader( archivo.getAbsolutePath() );
+                BufferedReader br = new BufferedReader(reader);
+                txtCodigo.read( br, null );
+                br.close();
+                txtCodigo.requestFocus();
+            }
+            catch(Exception e2) { txtConsola.append(e2.getMessage()); }
+
         }
-        try
-                {
-                    String nombreArchivo = archivo.getName();
-                    String path = archivo.getAbsolutePath();
-                    txtConsola.setText("\nSe ha abierto el archivo "+nombreArchivo+" desde "+path);
-                    FileReader reader = new FileReader( archivo.getAbsolutePath() );
-                    BufferedReader br = new BufferedReader(reader);
-                    txtCodigo.read( br, null );
-                    br.close();
-                    txtCodigo.requestFocus();
-                }
-                catch(Exception e2) { System.out.println(e2); }
-        
+
     }//GEN-LAST:event_btnLoadActionPerformed
 
     private void btnASTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnASTActionPerformed

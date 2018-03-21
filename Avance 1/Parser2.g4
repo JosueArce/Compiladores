@@ -6,8 +6,8 @@ options {
 
 program : statement*;
 statement : LET letStatement | RETURN returnStatement | expressionStatement;
-letStatement : ID ASIGNACION expression ( PyCOMA |) ;
-returnStatement : expression ( PyCOMA | VACIO);
+letStatement : ID ASIGNACION expression ( PyCOMA | ) ;
+returnStatement : expression ( PyCOMA | );
 expressionStatement : expression ( PyCOMA |);
 expression : additionExpression comparison;
 comparison : ((MENOR|MAYOR|MENIGUAL|MAYIGUAL|IGUAL) additionExpression)*;
@@ -18,7 +18,7 @@ multiplicationFactor : ((MUL|DIV) elementExpression)*;
 elementExpression :  primitiveExpression (elementAccess | callExpression |);
 elementAccess : PARCUADIZQ expression PARCUADDER;
 callExpression	: PARIZQ expressionList PARDER;
-primitiveExpression	: NUM | STR | ID | TRUE | FALSE | PARIZQ expression PARDER | arrayLiteral | arrayFunctions PARIZQ expressionList PARDER | functionLiteral | hashLiteral | printExpression | ifExpression;
+primitiveExpression	: INT | STRING | ID | TRUE | FALSE | PARIZQ expression PARDER | arrayLiteral | arrayFunctions PARIZQ expressionList PARDER | functionLiteral | hashLiteral | printExpression | ifExpression;
 arrayFunctions	: LEN | FIRST | LAST | REST | PUSH;
 arrayLiteral : PARCUADIZQ expressionList PARCUADDER;
 functionLiteral	: FN PARIZQ functionParameters PARDER blockStatement;

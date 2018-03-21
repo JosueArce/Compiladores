@@ -12,7 +12,7 @@ MAYOR : '>';
 MENOR : '<';
 DOSPTOS : ':';//dos puntoa
 SUM : '+';//suma
-RES : '*';//resta
+RES : '-';//resta
 MUL : '*';//multiplicacion
 DIV : '/';//division
 PARIZQ : '(';//parentesis izquierdo
@@ -32,21 +32,17 @@ WHILE : 'while';
 LET : 'let';
 ELSE : 'else';
 RETURN : 'return';
-INT : 'Integer';
-STRING : 'String';
 TRUE : 'true';
 FALSE : 'false';
-FN : 'fn';
+FN : 'fn' ID;//Posible solucion
 PUTS : 'puts';
 LEN : 'len';
 FIRST : 'first';
 LAST : 'last';
 REST : 'rest';
 PUSH : 'push';
-
-
-NUM: '0' | '1'..'9' ('0'..'9')*;
-STR : '"' ('""'|~'"')* '"' ;
+INT: '0' | '1'..'9' ('0'..'9')*;
+STRING : '"' ('""'|~'"')* '"' ;
 ID : LETTER (LETTER|DIGIT)*;//expresion regular para reconocer identificadores
 
 fragment LETTER : 'a'..'z'| 'A'..'Z';//macro para reconocer letras
