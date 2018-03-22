@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2753d798-5d8a-4d1a-8e85-594330b213ae" name="Default" comment="" />
+    <list default="true" id="2753d798-5d8a-4d1a-8e85-594330b213ae" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Proyecto parte 1.iml" afterPath="$PROJECT_DIR$/Proyecto parte 1.iml" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$AdditionExpressionContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$AdditionExpressionContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$AdditionFactorContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$AdditionFactorContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$ArrayFunctionsContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$ArrayFunctionsContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$ArrayLiteralContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$ArrayLiteralContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$BlockStatementContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$BlockStatementContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$CallExpressionContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$CallExpressionContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$ComparisonContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$ComparisonContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$ElementAccessContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$ElementAccessContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$ElementExpressionContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$ElementExpressionContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$ExpressionContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$ExpressionContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$ExpressionListContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$ExpressionListContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$ExpressionStatementContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$ExpressionStatementContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$FunctionLiteralContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$FunctionLiteralContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$FunctionParametersContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$FunctionParametersContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$HashContentContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$HashContentContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$HashLiteralContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$HashLiteralContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$IfExpressionContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$IfExpressionContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$MoreExpressionsContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$MoreExpressionsContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$MoreHashContentContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$MoreHashContentContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$MoreIdentifiersContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$MoreIdentifiersContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$MultiplicationExpressionContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$MultiplicationExpressionContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$MultiplicationFactorContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$MultiplicationFactorContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$PrimitiveExpressionContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$PrimitiveExpressionContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$PrintExpressionContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$PrintExpressionContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2$ReturnStatementContext.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2$ReturnStatementContext.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2.class" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Parser2.tokens" afterPath="$PROJECT_DIR$/build/classes/generated/Parser2.tokens" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Scanner.class" afterPath="$PROJECT_DIR$/build/classes/generated/Scanner.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/generated/Scanner.tokens" afterPath="$PROJECT_DIR$/build/classes/generated/Scanner.tokens" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/AST$1$1.class" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/AST$1$1.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/AST$1.class" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/AST$1.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/AST.class" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/AST.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/AST.form" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/AST.form" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Prueba.form" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Prueba.form" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana$1.class" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana$1.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana$2.class" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana$2.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana$3.class" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana$3.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana$4.class" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana$4.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana.class" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana.form" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/Ventana.form" />
+      <change beforePath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/test.txt" afterPath="$PROJECT_DIR$/build/classes/proyecto/parte/pkg1/test.txt" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto parte 1/proyecto/parte/pkg1/Ventana$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto parte 1/proyecto/parte/pkg1/Ventana$2.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto parte 1/proyecto/parte/pkg1/Ventana$3.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto parte 1/proyecto/parte/pkg1/Ventana$4.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto parte 1/proyecto/parte/pkg1/Ventana.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto parte 1/proyecto/parte/pkg1/test.txt" afterPath="$PROJECT_DIR$/out/production/Proyecto parte 1/proyecto/parte/pkg1/test.txt" />
+      <change beforePath="$PROJECT_DIR$/src/proyecto/parte/pkg1/Ventana.form" afterPath="$PROJECT_DIR$/src/proyecto/parte/pkg1/Ventana.form" />
+      <change beforePath="$PROJECT_DIR$/src/proyecto/parte/pkg1/Ventana.java" afterPath="$PROJECT_DIR$/src/proyecto/parte/pkg1/Ventana.java" />
+      <change beforePath="$PROJECT_DIR$/test.txt" afterPath="$PROJECT_DIR$/test.txt" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,8 +70,8 @@
       <file leaf-file-name="Scanner.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scanner.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="463">
+              <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -25,13 +80,30 @@
       <file leaf-file-name="Ventana.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/proyecto/parte/pkg1/Ventana.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="270" column="29" lean-forward="true" selection-start-line="270" selection-start-column="29" selection-end-line="270" selection-end-column="29" />
+            <state relative-caret-position="790">
+              <caret line="322" column="0" lean-forward="true" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3257#3287#0" expanded="true" />
+                <element signature="method#Ventana#0;class#Ventana#0" expanded="false" />
+                <element signature="method#getLineAtCaret#0;class#Ventana#0" expanded="false" />
+                <element signature="docComment;method#initComponents#0;class#Ventana#0" expanded="false" />
+                <element signature="e#3451#3540#0" expanded="true" />
+                <element signature="method#initComponents#0;class#Ventana#0" expanded="false" />
+                <element signature="method#btnRunActionPerformed#0;class#Ventana#0" expanded="false" />
                 <element signature="method#btnLoadActionPerformed#0;class#Ventana#0" expanded="false" />
+                <element signature="method#btnASTActionPerformed#0;class#Ventana#0" expanded="false" />
+                <element signature="method#getLineColInformation#0;class#Ventana#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Scanner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/generated/Scanner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -39,9 +111,11 @@
       <file leaf-file-name="Parser2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/generated/Parser2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
-              <caret line="99" column="36" lean-forward="false" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="1995">
+              <caret line="102" column="36" lean-forward="false" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+              <folding>
+                <marker date="1521689622763" expanded="true" signature="52311:52495" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,8 +123,8 @@
       <file leaf-file-name="Parser2.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parser2.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="73" lean-forward="false" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+            <state relative-caret-position="256">
+              <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -59,8 +133,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/proyecto/parte/pkg1/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="462">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#448#0" expanded="true" />
               </folding>
@@ -71,14 +145,17 @@
       <file leaf-file-name="Scanner.tokens" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/generated/Scanner.tokens">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="987">
+              <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -122,8 +199,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -143,17 +218,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="generated" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Avance 1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Avance 1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg1" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -161,7 +232,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../antlr-4.7.1-complete.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="$PROJECT_DIR$/Scanner.g4::/auto-gen" value="true" />
     <property name="$PROJECT_DIR$/Scanner.g4::/output-dir" value="C:\Users\Daniel\Dropbox\Yo\TEC\Semestre 1 2018\Compi\Repositorio\Compiladores-\Avance 1\src" />
     <property name="$PROJECT_DIR$/Scanner.g4::/package" value="generated" />
@@ -190,7 +261,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -209,13 +287,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Proyecto parte 1" />
       <envs />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -251,12 +322,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -291,6 +356,12 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -323,38 +394,39 @@
       <workItem from="1521487710305" duration="1490000" />
       <workItem from="1521491516264" duration="1311000" />
       <workItem from="1521495428816" duration="537000" />
+      <workItem from="1521689639080" duration="4559000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23862000" />
+    <option name="totallyTimeSpent" value="28421000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23026316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38218054" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14568081" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14769065" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985932" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -382,14 +454,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Parser2.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="73" lean-forward="false" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/proyecto/parte/pkg1/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -414,8 +478,15 @@
           <caret line="271" column="8" lean-forward="false" selection-start-line="271" selection-start-column="8" selection-end-line="271" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3257#3287#0" expanded="true" />
+            <element signature="method#Ventana#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineAtCaret#0;class#Ventana#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="e#3451#3540#0" expanded="true" />
+            <element signature="method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnRunActionPerformed#0;class#Ventana#0" expanded="false" />
             <element signature="method#btnLoadActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnASTActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineColInformation#0;class#Ventana#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -434,8 +505,15 @@
           <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3257#3287#0" expanded="true" />
+            <element signature="method#Ventana#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineAtCaret#0;class#Ventana#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="e#3451#3540#0" expanded="true" />
+            <element signature="method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnRunActionPerformed#0;class#Ventana#0" expanded="false" />
             <element signature="method#btnLoadActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnASTActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineColInformation#0;class#Ventana#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -507,8 +585,15 @@
           <caret line="309" column="27" lean-forward="false" selection-start-line="309" selection-start-column="27" selection-end-line="309" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3257#3287#0" expanded="true" />
+            <element signature="method#Ventana#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineAtCaret#0;class#Ventana#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="e#3451#3540#0" expanded="true" />
+            <element signature="method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnRunActionPerformed#0;class#Ventana#0" expanded="false" />
             <element signature="method#btnLoadActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnASTActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineColInformation#0;class#Ventana#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -550,8 +635,15 @@
           <caret line="312" column="27" lean-forward="false" selection-start-line="312" selection-start-column="27" selection-end-line="312" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3257#3287#0" expanded="true" />
+            <element signature="method#Ventana#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineAtCaret#0;class#Ventana#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="e#3451#3540#0" expanded="true" />
+            <element signature="method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnRunActionPerformed#0;class#Ventana#0" expanded="false" />
             <element signature="method#btnLoadActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnASTActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineColInformation#0;class#Ventana#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -570,8 +662,15 @@
           <caret line="251" column="39" lean-forward="false" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3257#3287#0" expanded="true" />
+            <element signature="method#Ventana#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineAtCaret#0;class#Ventana#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="e#3451#3540#0" expanded="true" />
+            <element signature="method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnRunActionPerformed#0;class#Ventana#0" expanded="false" />
             <element signature="method#btnLoadActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnASTActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineColInformation#0;class#Ventana#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -717,20 +816,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../antlr-4.7.1-complete.jar!/org/antlr/v4/gui/TreeViewer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../antlr-4.7.1-complete.jar!/org/antlr/v4/gui/Trees.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../antlr-4.7.1-complete.jar!/org/antlr/v4/gui/TreeViewer.class" />
+    <entry file="jar://$PROJECT_DIR$/../../../antlr-4.7.1-complete.jar!/org/antlr/v4/gui/Trees.class" />
     <entry file="file://$PROJECT_DIR$/src/proyecto/parte/pkg1/AST.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-187">
@@ -740,54 +827,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/generated/Parser2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="99" column="36" lean-forward="false" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser2.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="73" lean-forward="false" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/proyecto/parte/pkg1/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="1995">
+          <caret line="102" column="36" lean-forward="false" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
           <folding>
-            <element signature="e#0#448#0" expanded="true" />
+            <marker date="1521689622763" expanded="true" signature="52311:52495" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/generated/Scanner.tokens">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="987">
+          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scanner.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="463">
+          <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser2.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/generated/Scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proyecto/parte/pkg1/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#448#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/proyecto/parte/pkg1/Ventana.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="270" column="29" lean-forward="true" selection-start-line="270" selection-start-column="29" selection-end-line="270" selection-end-column="29" />
+        <state relative-caret-position="790">
+          <caret line="322" column="0" lean-forward="true" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3257#3287#0" expanded="true" />
+            <element signature="method#Ventana#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineAtCaret#0;class#Ventana#0" expanded="false" />
+            <element signature="docComment;method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="e#3451#3540#0" expanded="true" />
+            <element signature="method#initComponents#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnRunActionPerformed#0;class#Ventana#0" expanded="false" />
             <element signature="method#btnLoadActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#btnASTActionPerformed#0;class#Ventana#0" expanded="false" />
+            <element signature="method#getLineColInformation#0;class#Ventana#0" expanded="false" />
           </folding>
         </state>
       </provider>
