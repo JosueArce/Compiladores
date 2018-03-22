@@ -5,24 +5,32 @@
  */
 package proyecto.parte.pkg1;
 
-import java.awt.TextArea;
-import java.io.File;
-import javax.swing.JFileChooser;
-import javax.swing.JTextArea;
+import generated.Parser2;
+import generated.Scanner;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.ParseTree;
+
+import java.io.*;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import javax.swing.*;
 import javax.swing.text.Element;
-import javax.swing.text.Utilities;
 
 /**
  *
  * @author Daniel
  */
 public class Ventana extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Ventana
-     */
+    
+    File archivo;
+    ParseTree tree;
+    Parser2 parser;
+    java.util.concurrent.Future<JFrame> treeGUI;
     public Ventana() {
         initComponents();
+        
+        archivo= new File("test.txt");
+        
         btnRun.setOpaque(false);
         btnRun.setContentAreaFilled(false);
         btnRun.setBorderPainted(false);
@@ -37,9 +45,41 @@ public class Ventana extends javax.swing.JFrame {
         btnAST.setContentAreaFilled(false);
         btnAST.setBorderPainted(false);
         btnAST.setToolTipText("Generar AST");
+        //txtCodigo.setMinimumSize(new Dimension(200, 200));
         
+        //JScrollPane scroll = new JScrollPane(txtCodigo);
+        TextLineNumber tln = new TextLineNumber(txtCodigo);
+        scroll.setRowHeaderView(tln);
         
+        /*
+        JPanel gridCodigoYNumLinea = new JPanel();
+        //gridCodigoYNumLinea.setMaximumSize(new Dimension(this.getWidth(), this.getHeight()/2));
+        //gridCodigoYNumLinea.setMinimumSize(gridCodigoYNumLinea.getMaximumSize());
+        gridCodigoYNumLinea.setLayout(new GridLayout(1,2));
+        gridCodigoYNumLinea.add(scroll,BorderLayout.WEST);
+        gridCodigoYNumLinea.add(txtCodigo,BorderLayout.EAST);
         
+        //JPanel gridConsola = new JPanel();
+        //gridConsola.setLayout(new GridLayout(1, 1));
+        //gridConsola.add(txtConsola,BorderLayout.CENTER);
+        
+        JPanel gridBotones = new JPanel();
+        gridBotones.setLayout(new GridLayout(1, 4));
+        gridBotones.add(btnInterpretarInstrucciones);
+        gridBotones.add(btnRun);
+        gridBotones.add(btnLoad);
+        gridBotones.add(btnAST);
+        
+        JPanel todos = new JPanel();
+        todos.add(new JScrollPane(gridCodigoYNumLinea));
+        //todos.add(gridConsola);
+        todos.add(gridBotones);
+        
+        this.setLayout(new BorderLayout());
+        this.add(todos,BorderLayout.CENTER);
+        //this.add(gridConsola,BorderLayout.AFTER_LAST_LINE);
+        //this.add(gridBotones,BorderLayout.AFTER_LAST_LINE);
+        */
     }
 
     
@@ -68,9 +108,9 @@ public class Ventana extends javax.swing.JFrame {
         btnLoad = new javax.swing.JButton();
         btnAST = new javax.swing.JButton();
         btnInterpretarInstrucciones = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtCodigo = new javax.swing.JTextArea();
-        lblLineas = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtCodigo = new javax.swing.JTextPane();
+        scroll = new javax.swing.JScrollPane(txtCodigo);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Analizador Sintáctico");
@@ -105,60 +145,54 @@ public class Ventana extends javax.swing.JFrame {
 
         btnInterpretarInstrucciones.setText("Interpretar Instrucciones");
 
-        txtCodigo.setColumns(20);
-        txtCodigo.setRows(5);
-        jScrollPane1.setViewportView(txtCodigo);
+        txtCodigo.setText("let age = 1;\nlet name = \"Monkey\";\nlet result = 10 * (20 / 2);\n\nlet myArray = [1, 2, 3, 4, 5];\n\nlet thorsten = {\"name\": \"Thorsten\", \"age\": 28};\n\nmyArray[0] // => 1\nthorsten[\"name\"] // => \"Thorsten\"\n\nlet add = fn(a, b) { return a + b; };\n\nlet fibonacci = fn(x) {\nif (x == 0) {\n0\n} else {\nif (x == 1) {\n1\n} else {\nfibonacci(x - 1) + fibonacci(x - 2);\n}\n}\n};\n");
+        jScrollPane3.setViewportView(txtCodigo);
 
-        lblLineas.setText("jLabel2");
+        scroll.setAutoscrolls(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(btnInterpretarInstrucciones)
-                        .addGap(63, 63, 63)
-                        .addComponent(lblLineas)
-                        .addContainerGap(370, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addContainerGap())
+                        .addContainerGap(616, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRun, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAST, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnRun, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAST, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnRun, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAST, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 174, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
+                    .addComponent(scroll)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnAST, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLoad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRun, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInterpretarInstrucciones)
-                    .addComponent(lblLineas))
+                .addComponent(btnInterpretarInstrucciones)
                 .addGap(6, 6, 6))
         );
 
@@ -166,23 +200,79 @@ public class Ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRunActionPerformed
-        txtConsola.append("Running...");
-        txtConsola.append("\nCompilación Exitosa!");
+        txtConsola.setText("Running...\n");
+
+        try
+        {
+            FileWriter pw = new FileWriter ("test.txt");
+            txtCodigo.write(pw);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        Scanner scanner = null;
+        parser = null;
+        ANTLRInputStream input=null;
+        CommonTokenStream tokens = null;
+        try {
+            input = new ANTLRInputStream(new FileReader("test.txt"));//archivo.getAbsolutePath()));
+            scanner = new Scanner(input);
+            tokens = new CommonTokenStream(scanner);
+            parser = new Parser2(tokens);
+        }
+        catch(Exception e){txtConsola.append("No hay archivo");}
+/*
+        List<Token> lista = (List<Token>) scanner.getAllTokens();
+
+        for (Token t : lista)
+
+            txtConsola.append(t.getType() + ":" + t.getText() + "\n");
+        scanner.reset();
+*/
+        try{
+            tree = parser.program();
+            txtConsola.append("Compilacion Exitosa!");
+
+        }catch (Exception e){
+            txtConsola.append(e.getMessage());
+        }
+
     }//GEN-LAST:event_btnRunActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
         JFileChooser cargar = new JFileChooser();
         cargar.showOpenDialog(null);
-        File archivo = cargar.getSelectedFile();
-        String nombreArchivo = archivo.getName();
-        String path = archivo.getAbsolutePath();
-        txtConsola.append("\nSe ha abierto el archivo "+nombreArchivo+" desde "+path);
+        archivo = cargar.getSelectedFile();
+        if(archivo.getName()!=null){
+            try
+            {
+                String nombreArchivo = archivo.getName();
+                String path = archivo.getAbsolutePath();
+                txtConsola.setText("\nSe ha abierto el archivo "+nombreArchivo+" desde "+path);
+                FileReader reader = new FileReader( archivo.getAbsolutePath() );
+                BufferedReader br = new BufferedReader(reader);
+                txtCodigo.read( br, null );
+                br.close();
+                txtCodigo.requestFocus();
+            }
+            catch(Exception e2) { txtConsola.append(e2.getMessage()); }
+
+        }
+
     }//GEN-LAST:event_btnLoadActionPerformed
 
     private void btnASTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnASTActionPerformed
         txtConsola.append("\nCargando AST...");
-        AST ast = new AST(this, rootPaneCheckingEnabled);
-        ast.setVisible(true);
+        //AST ast = new AST(this, rootPaneCheckingEnabled);
+        //ast.setVisible(true);
+        try{
+            treeGUI = org.antlr.v4.gui.Trees.inspect(tree,parser);
+        }catch (Exception e){
+            txtConsola.append(e.getMessage());
+        }
+
     }//GEN-LAST:event_btnASTActionPerformed
 
     /**
@@ -227,10 +317,10 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton btnLoad;
     private javax.swing.JButton btnRun;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private static javax.swing.JLabel lblLineas;
-    private static javax.swing.JTextArea txtCodigo;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane scroll;
+    private javax.swing.JTextPane txtCodigo;
     private javax.swing.JTextArea txtConsola;
     // End of variables declaration//GEN-END:variables
 }

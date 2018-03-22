@@ -12,7 +12,7 @@ MAYOR : '>';
 MENOR : '<';
 DOSPTOS : ':';//dos puntoa
 SUM : '+';//suma
-RES : '*';//resta
+RES : '-';//resta
 MUL : '*';//multiplicacion
 DIV : '/';//division
 PARIZQ : '(';//parentesis izquierdo
@@ -32,25 +32,25 @@ WHILE : 'while';
 LET : 'let';
 ELSE : 'else';
 RETURN : 'return';
-INT : 'Integer';
-STRING : 'String';
 TRUE : 'true';
 FALSE : 'false';
-FN : 'fn';
+FN : 'fn' ID;//Posible solucion
 PUTS : 'puts';
 LEN : 'len';
 FIRST : 'first';
 LAST : 'last';
 REST : 'rest';
 PUSH : 'push';
-
-
-
+INT: '0' | '1'..'9' ('0'..'9')*;
+STRING : '"' ('""'|~'"')* '"' ;
 ID : LETTER (LETTER|DIGIT)*;//expresion regular para reconocer identificadores
 
 fragment LETTER : 'a'..'z'| 'A'..'Z';//macro para reconocer letras
 fragment DIGIT : '0'..'9';//macro para reconocer letras
 
+COMENTARIO_LINEA:   '//'.*?'\r'?'\n' -> skip ;
+
+COMENTARIO_MULTILINEA: '/*'( COMENTARIO_MULTILINEA | . )*?'*/' -> skip;
 WS : [ \t\n\r]+ -> skip; //expresion regular para el espacio en blanco. El skip significa que ignora lo que reconoció. El + significa
                         //una o más veces
 LINE_COMMENT : '//' ~[\r\n]* '\r'? '\n' -> channel(HIDDEN);//posible comentario de linea extraido de> https://stackoverflow.com/questions/16496579/matching-arbitrary-text-both-symbols-and-spaces-with-antlr

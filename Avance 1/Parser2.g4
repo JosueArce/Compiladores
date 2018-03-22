@@ -6,8 +6,8 @@ options {
 
 program : statement*;
 statement : LET letStatement | RETURN returnStatement | expressionStatement;
-letStatement : ID ASIGNACION expression ( PyCOMA |) ;
-returnStatement : expression ( PyCOMA | VACIO);
+letStatement : ID ASIGNACION expression ( PyCOMA | ) ;
+returnStatement : expression ( PyCOMA | );
 expressionStatement : expression ( PyCOMA |);
 expression : additionExpression comparison;
 comparison : ((MENOR|MAYOR|MENIGUAL|MAYIGUAL|IGUAL) additionExpression)*;
