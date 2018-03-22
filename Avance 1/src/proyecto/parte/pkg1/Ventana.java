@@ -10,6 +10,7 @@ import generated.Scanner;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
+import java.awt.*;
 import java.io.*;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -50,36 +51,12 @@ public class Ventana extends javax.swing.JFrame {
         //JScrollPane scroll = new JScrollPane(txtCodigo);
         TextLineNumber tln = new TextLineNumber(txtCodigo);
         scroll.setRowHeaderView(tln);
-        
-        /*
-        JPanel gridCodigoYNumLinea = new JPanel();
-        //gridCodigoYNumLinea.setMaximumSize(new Dimension(this.getWidth(), this.getHeight()/2));
-        //gridCodigoYNumLinea.setMinimumSize(gridCodigoYNumLinea.getMaximumSize());
-        gridCodigoYNumLinea.setLayout(new GridLayout(1,2));
-        gridCodigoYNumLinea.add(scroll,BorderLayout.WEST);
-        gridCodigoYNumLinea.add(txtCodigo,BorderLayout.EAST);
-        
-        //JPanel gridConsola = new JPanel();
-        //gridConsola.setLayout(new GridLayout(1, 1));
-        //gridConsola.add(txtConsola,BorderLayout.CENTER);
-        
-        JPanel gridBotones = new JPanel();
-        gridBotones.setLayout(new GridLayout(1, 4));
-        gridBotones.add(btnInterpretarInstrucciones);
-        gridBotones.add(btnRun);
-        gridBotones.add(btnLoad);
-        gridBotones.add(btnAST);
-        
-        JPanel todos = new JPanel();
-        todos.add(new JScrollPane(gridCodigoYNumLinea));
-        //todos.add(gridConsola);
-        todos.add(gridBotones);
-        
-        this.setLayout(new BorderLayout());
-        this.add(todos,BorderLayout.CENTER);
-        //this.add(gridConsola,BorderLayout.AFTER_LAST_LINE);
-        //this.add(gridBotones,BorderLayout.AFTER_LAST_LINE);
-        */
+
+        MessageConsole mc = new MessageConsole(txtConsola);
+        mc.redirectOut();
+        mc.redirectErr(Color.RED, null);
+
+
     }
 
     
@@ -223,20 +200,20 @@ public class Ventana extends javax.swing.JFrame {
             parser = new Parser2(tokens);
         }
         catch(Exception e){txtConsola.append("No hay archivo");}
-/*
-        List<Token> lista = (List<Token>) scanner.getAllTokens();
 
+        List<Token> lista = (List<Token>) scanner.getAllTokens();
+        /*
         for (Token t : lista)
 
-            txtConsola.append(t.getType() + ":" + t.getText() + "\n");
+            System.out.println(t.getType() + ":" + t.getText() + "\n");
         scanner.reset();
-*/
+        */
         try{
             tree = parser.program();
-            txtConsola.append("Compilacion Exitosa!");
+            System.out.println("Compilacion Exitosa!");
 
         }catch (Exception e){
-            txtConsola.append(e.getMessage());
+            System.out.println(e.getMessage());
         }
 
     }//GEN-LAST:event_btnRunActionPerformed
@@ -257,20 +234,20 @@ public class Ventana extends javax.swing.JFrame {
                 br.close();
                 txtCodigo.requestFocus();
             }
-            catch(Exception e2) { txtConsola.append(e2.getMessage()); }
+            catch(Exception e2) { System.out.println(e2.getMessage()); }
 
         }
 
     }//GEN-LAST:event_btnLoadActionPerformed
 
     private void btnASTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnASTActionPerformed
-        txtConsola.append("\nCargando AST...");
+        System.out.println("\nCargando AST...");
         //AST ast = new AST(this, rootPaneCheckingEnabled);
         //ast.setVisible(true);
         try{
             treeGUI = org.antlr.v4.gui.Trees.inspect(tree,parser);
         }catch (Exception e){
-            txtConsola.append(e.getMessage());
+            System.out.println(e.getMessage());
         }
 
     }//GEN-LAST:event_btnASTActionPerformed

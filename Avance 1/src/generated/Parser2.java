@@ -1,4 +1,4 @@
-// Generated from C:/Users/Daniel/Dropbox/Yo/TEC/Semestre 1 2018/Compi/Repositorio/Compiladores-/Avance 1\Parser2.g4 by ANTLR 4.7
+// Generated from C:/Users/Daniel-PC/Dropbox/Yo/TEC/Semestre 1 2018/Compi/Repositorio/Compiladores-/Avance 1\Parser2.g4 by ANTLR 4.7
 package generated;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -20,10 +20,9 @@ public class Parser2 extends Parser {
 		PyCOMA=1, COMA=2, ASIGNACION=3, MAYIGUAL=4, MENIGUAL=5, IGUAL=6, MAYOR=7, 
 		MENOR=8, DOSPTOS=9, SUM=10, RES=11, MUL=12, DIV=13, PARIZQ=14, PARDER=15, 
 		PARCUADIZQ=16, PARCUADDER=17, CORCHETEIZQ=18, CORCHETEDER=19, COMILLADOBLE=20, 
-		INICIOCOMANI=21, FINCOMANI=22, SALTOLINEA=23, IF=24, WHILE=25, LET=26, 
-		ELSE=27, RETURN=28, TRUE=29, FALSE=30, FN=31, PUTS=32, LEN=33, FIRST=34, 
-		LAST=35, REST=36, PUSH=37, INT=38, STRING=39, ID=40, COMENTARIO_LINEA=41, 
-		COMENTARIO_MULTILINEA=42, WS=43, LINE_COMMENT=44;
+		IF=21, WHILE=22, LET=23, ELSE=24, RETURN=25, TRUE=26, FALSE=27, FN=28, 
+		PUTS=29, LEN=30, FIRST=31, LAST=32, REST=33, PUSH=34, INT=35, STRING=36, 
+		ID=37, COMENTARIO_LINEA=38, COMENTARIO_MULTILINEA=39, WS=40, LINE_COMMENT=41;
 	public static final int
 		RULE_program = 0, RULE_statement = 1, RULE_letStatement = 2, RULE_returnStatement = 3, 
 		RULE_expressionStatement = 4, RULE_expression = 5, RULE_comparison = 6, 
@@ -47,18 +46,16 @@ public class Parser2 extends Parser {
 	private static final String[] _LITERAL_NAMES = {
 		null, "';'", "','", "'='", "'>='", "'<='", "'=='", "'>'", "'<'", "':'", 
 		"'+'", "'-'", "'*'", "'/'", "'('", "')'", "'['", "']'", "'{'", "'}'", 
-		"'\"'", "'/*'", "'*/'", "'\n'", "'if'", "'while'", "'let'", "'else'", 
-		"'return'", "'true'", "'false'", null, "'puts'", "'len'", "'first'", "'last'", 
-		"'rest'", "'push'"
+		"'\"'", "'if'", "'while'", "'let'", "'else'", "'return'", "'true'", "'false'", 
+		null, "'puts'", "'len'", "'first'", "'last'", "'rest'", "'push'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, "PyCOMA", "COMA", "ASIGNACION", "MAYIGUAL", "MENIGUAL", "IGUAL", 
 		"MAYOR", "MENOR", "DOSPTOS", "SUM", "RES", "MUL", "DIV", "PARIZQ", "PARDER", 
 		"PARCUADIZQ", "PARCUADDER", "CORCHETEIZQ", "CORCHETEDER", "COMILLADOBLE", 
-		"INICIOCOMANI", "FINCOMANI", "SALTOLINEA", "IF", "WHILE", "LET", "ELSE", 
-		"RETURN", "TRUE", "FALSE", "FN", "PUTS", "LEN", "FIRST", "LAST", "REST", 
-		"PUSH", "INT", "STRING", "ID", "COMENTARIO_LINEA", "COMENTARIO_MULTILINEA", 
-		"WS", "LINE_COMMENT"
+		"IF", "WHILE", "LET", "ELSE", "RETURN", "TRUE", "FALSE", "FN", "PUTS", 
+		"LEN", "FIRST", "LAST", "REST", "PUSH", "INT", "STRING", "ID", "COMENTARIO_LINEA", 
+		"COMENTARIO_MULTILINEA", "WS", "LINE_COMMENT"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -1696,7 +1693,7 @@ public class Parser2 extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3.\u00e3\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3+\u00e3\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -1714,29 +1711,29 @@ public class Parser2 extends Parser {
 		"\32\u00cb\13\32\3\33\3\33\3\33\3\33\3\33\3\34\3\34\3\34\3\34\3\34\3\34"+
 		"\5\34\u00d8\n\34\3\35\3\35\7\35\u00dc\n\35\f\35\16\35\u00df\13\35\3\35"+
 		"\3\35\3\35\2\2\36\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62"+
-		"\64\668\2\6\3\2\6\n\3\2\f\r\3\2\16\17\3\2#\'\2\u00e2\2=\3\2\2\2\4E\3\2"+
+		"\64\668\2\6\3\2\6\n\3\2\f\r\3\2\16\17\3\2 $\2\u00e2\2=\3\2\2\2\4E\3\2"+
 		"\2\2\6G\3\2\2\2\bN\3\2\2\2\nS\3\2\2\2\fX\3\2\2\2\16_\3\2\2\2\20b\3\2\2"+
 		"\2\22i\3\2\2\2\24l\3\2\2\2\26s\3\2\2\2\30v\3\2\2\2\32|\3\2\2\2\34\u0080"+
 		"\3\2\2\2\36\u0097\3\2\2\2 \u0099\3\2\2\2\"\u009b\3\2\2\2$\u009f\3\2\2"+
 		"\2&\u00a5\3\2\2\2(\u00ac\3\2\2\2*\u00af\3\2\2\2,\u00b4\3\2\2\2.\u00bc"+
 		"\3\2\2\2\60\u00c3\3\2\2\2\62\u00c9\3\2\2\2\64\u00cc\3\2\2\2\66\u00d1\3"+
 		"\2\2\28\u00d9\3\2\2\2:<\5\4\3\2;:\3\2\2\2<?\3\2\2\2=;\3\2\2\2=>\3\2\2"+
-		"\2>\3\3\2\2\2?=\3\2\2\2@A\7\34\2\2AF\5\6\4\2BC\7\36\2\2CF\5\b\5\2DF\5"+
-		"\n\6\2E@\3\2\2\2EB\3\2\2\2ED\3\2\2\2F\5\3\2\2\2GH\7*\2\2HI\7\5\2\2IL\5"+
-		"\f\7\2JM\7\3\2\2KM\3\2\2\2LJ\3\2\2\2LK\3\2\2\2M\7\3\2\2\2NQ\5\f\7\2OR"+
-		"\7\3\2\2PR\3\2\2\2QO\3\2\2\2QP\3\2\2\2R\t\3\2\2\2SV\5\f\7\2TW\7\3\2\2"+
-		"UW\3\2\2\2VT\3\2\2\2VU\3\2\2\2W\13\3\2\2\2XY\5\20\t\2YZ\5\16\b\2Z\r\3"+
-		"\2\2\2[\\\t\2\2\2\\^\5\20\t\2][\3\2\2\2^a\3\2\2\2_]\3\2\2\2_`\3\2\2\2"+
-		"`\17\3\2\2\2a_\3\2\2\2bc\5\24\13\2cd\5\22\n\2d\21\3\2\2\2ef\t\3\2\2fh"+
-		"\5\24\13\2ge\3\2\2\2hk\3\2\2\2ig\3\2\2\2ij\3\2\2\2j\23\3\2\2\2ki\3\2\2"+
-		"\2lm\5\30\r\2mn\5\26\f\2n\25\3\2\2\2op\t\4\2\2pr\5\30\r\2qo\3\2\2\2ru"+
-		"\3\2\2\2sq\3\2\2\2st\3\2\2\2t\27\3\2\2\2us\3\2\2\2vz\5\36\20\2w{\5\32"+
+		"\2>\3\3\2\2\2?=\3\2\2\2@A\7\31\2\2AF\5\6\4\2BC\7\33\2\2CF\5\b\5\2DF\5"+
+		"\n\6\2E@\3\2\2\2EB\3\2\2\2ED\3\2\2\2F\5\3\2\2\2GH\7\'\2\2HI\7\5\2\2IL"+
+		"\5\f\7\2JM\7\3\2\2KM\3\2\2\2LJ\3\2\2\2LK\3\2\2\2M\7\3\2\2\2NQ\5\f\7\2"+
+		"OR\7\3\2\2PR\3\2\2\2QO\3\2\2\2QP\3\2\2\2R\t\3\2\2\2SV\5\f\7\2TW\7\3\2"+
+		"\2UW\3\2\2\2VT\3\2\2\2VU\3\2\2\2W\13\3\2\2\2XY\5\20\t\2YZ\5\16\b\2Z\r"+
+		"\3\2\2\2[\\\t\2\2\2\\^\5\20\t\2][\3\2\2\2^a\3\2\2\2_]\3\2\2\2_`\3\2\2"+
+		"\2`\17\3\2\2\2a_\3\2\2\2bc\5\24\13\2cd\5\22\n\2d\21\3\2\2\2ef\t\3\2\2"+
+		"fh\5\24\13\2ge\3\2\2\2hk\3\2\2\2ig\3\2\2\2ij\3\2\2\2j\23\3\2\2\2ki\3\2"+
+		"\2\2lm\5\30\r\2mn\5\26\f\2n\25\3\2\2\2op\t\4\2\2pr\5\30\r\2qo\3\2\2\2"+
+		"ru\3\2\2\2sq\3\2\2\2st\3\2\2\2t\27\3\2\2\2us\3\2\2\2vz\5\36\20\2w{\5\32"+
 		"\16\2x{\5\34\17\2y{\3\2\2\2zw\3\2\2\2zx\3\2\2\2zy\3\2\2\2{\31\3\2\2\2"+
 		"|}\7\22\2\2}~\5\f\7\2~\177\7\23\2\2\177\33\3\2\2\2\u0080\u0081\7\20\2"+
 		"\2\u0081\u0082\5\60\31\2\u0082\u0083\7\21\2\2\u0083\35\3\2\2\2\u0084\u0098"+
-		"\7(\2\2\u0085\u0098\7)\2\2\u0086\u0098\7*\2\2\u0087\u0098\7\37\2\2\u0088"+
-		"\u0098\7 \2\2\u0089\u008a\7\20\2\2\u008a\u008b\5\f\7\2\u008b\u008c\7\21"+
-		"\2\2\u008c\u0098\3\2\2\2\u008d\u0098\5\"\22\2\u008e\u008f\5 \21\2\u008f"+
+		"\7%\2\2\u0085\u0098\7&\2\2\u0086\u0098\7\'\2\2\u0087\u0098\7\34\2\2\u0088"+
+		"\u0098\7\35\2\2\u0089\u008a\7\20\2\2\u008a\u008b\5\f\7\2\u008b\u008c\7"+
+		"\21\2\2\u008c\u0098\3\2\2\2\u008d\u0098\5\"\22\2\u008e\u008f\5 \21\2\u008f"+
 		"\u0090\7\20\2\2\u0090\u0091\5\60\31\2\u0091\u0092\7\21\2\2\u0092\u0098"+
 		"\3\2\2\2\u0093\u0098\5$\23\2\u0094\u0098\5*\26\2\u0095\u0098\5\64\33\2"+
 		"\u0096\u0098\5\66\34\2\u0097\u0084\3\2\2\2\u0097\u0085\3\2\2\2\u0097\u0086"+
@@ -1744,23 +1741,23 @@ public class Parser2 extends Parser {
 		"\u008d\3\2\2\2\u0097\u008e\3\2\2\2\u0097\u0093\3\2\2\2\u0097\u0094\3\2"+
 		"\2\2\u0097\u0095\3\2\2\2\u0097\u0096\3\2\2\2\u0098\37\3\2\2\2\u0099\u009a"+
 		"\t\5\2\2\u009a!\3\2\2\2\u009b\u009c\7\22\2\2\u009c\u009d\5\60\31\2\u009d"+
-		"\u009e\7\23\2\2\u009e#\3\2\2\2\u009f\u00a0\7!\2\2\u00a0\u00a1\7\20\2\2"+
-		"\u00a1\u00a2\5&\24\2\u00a2\u00a3\7\21\2\2\u00a3\u00a4\58\35\2\u00a4%\3"+
-		"\2\2\2\u00a5\u00a6\7*\2\2\u00a6\u00a7\5(\25\2\u00a7\'\3\2\2\2\u00a8\u00a9"+
-		"\7\4\2\2\u00a9\u00ab\7*\2\2\u00aa\u00a8\3\2\2\2\u00ab\u00ae\3\2\2\2\u00ac"+
-		"\u00aa\3\2\2\2\u00ac\u00ad\3\2\2\2\u00ad)\3\2\2\2\u00ae\u00ac\3\2\2\2"+
-		"\u00af\u00b0\7\24\2\2\u00b0\u00b1\5,\27\2\u00b1\u00b2\5.\30\2\u00b2\u00b3"+
-		"\7\25\2\2\u00b3+\3\2\2\2\u00b4\u00b5\5\f\7\2\u00b5\u00b6\7\13\2\2\u00b6"+
-		"\u00b7\5\f\7\2\u00b7-\3\2\2\2\u00b8\u00b9\7\4\2\2\u00b9\u00bb\5,\27\2"+
-		"\u00ba\u00b8\3\2\2\2\u00bb\u00be\3\2\2\2\u00bc\u00ba\3\2\2\2\u00bc\u00bd"+
-		"\3\2\2\2\u00bd/\3\2\2\2\u00be\u00bc\3\2\2\2\u00bf\u00c0\5\f\7\2\u00c0"+
-		"\u00c1\5\62\32\2\u00c1\u00c4\3\2\2\2\u00c2\u00c4\3\2\2\2\u00c3\u00bf\3"+
-		"\2\2\2\u00c3\u00c2\3\2\2\2\u00c4\61\3\2\2\2\u00c5\u00c6\7\4\2\2\u00c6"+
+		"\u009e\7\23\2\2\u009e#\3\2\2\2\u009f\u00a0\7\36\2\2\u00a0\u00a1\7\20\2"+
+		"\2\u00a1\u00a2\5&\24\2\u00a2\u00a3\7\21\2\2\u00a3\u00a4\58\35\2\u00a4"+
+		"%\3\2\2\2\u00a5\u00a6\7\'\2\2\u00a6\u00a7\5(\25\2\u00a7\'\3\2\2\2\u00a8"+
+		"\u00a9\7\4\2\2\u00a9\u00ab\7\'\2\2\u00aa\u00a8\3\2\2\2\u00ab\u00ae\3\2"+
+		"\2\2\u00ac\u00aa\3\2\2\2\u00ac\u00ad\3\2\2\2\u00ad)\3\2\2\2\u00ae\u00ac"+
+		"\3\2\2\2\u00af\u00b0\7\24\2\2\u00b0\u00b1\5,\27\2\u00b1\u00b2\5.\30\2"+
+		"\u00b2\u00b3\7\25\2\2\u00b3+\3\2\2\2\u00b4\u00b5\5\f\7\2\u00b5\u00b6\7"+
+		"\13\2\2\u00b6\u00b7\5\f\7\2\u00b7-\3\2\2\2\u00b8\u00b9\7\4\2\2\u00b9\u00bb"+
+		"\5,\27\2\u00ba\u00b8\3\2\2\2\u00bb\u00be\3\2\2\2\u00bc\u00ba\3\2\2\2\u00bc"+
+		"\u00bd\3\2\2\2\u00bd/\3\2\2\2\u00be\u00bc\3\2\2\2\u00bf\u00c0\5\f\7\2"+
+		"\u00c0\u00c1\5\62\32\2\u00c1\u00c4\3\2\2\2\u00c2\u00c4\3\2\2\2\u00c3\u00bf"+
+		"\3\2\2\2\u00c3\u00c2\3\2\2\2\u00c4\61\3\2\2\2\u00c5\u00c6\7\4\2\2\u00c6"+
 		"\u00c8\5\f\7\2\u00c7\u00c5\3\2\2\2\u00c8\u00cb\3\2\2\2\u00c9\u00c7\3\2"+
 		"\2\2\u00c9\u00ca\3\2\2\2\u00ca\63\3\2\2\2\u00cb\u00c9\3\2\2\2\u00cc\u00cd"+
-		"\7\"\2\2\u00cd\u00ce\7\20\2\2\u00ce\u00cf\5\f\7\2\u00cf\u00d0\7\21\2\2"+
-		"\u00d0\65\3\2\2\2\u00d1\u00d2\7\32\2\2\u00d2\u00d3\5\f\7\2\u00d3\u00d7"+
-		"\58\35\2\u00d4\u00d5\7\35\2\2\u00d5\u00d8\58\35\2\u00d6\u00d8\3\2\2\2"+
+		"\7\37\2\2\u00cd\u00ce\7\20\2\2\u00ce\u00cf\5\f\7\2\u00cf\u00d0\7\21\2"+
+		"\2\u00d0\65\3\2\2\2\u00d1\u00d2\7\27\2\2\u00d2\u00d3\5\f\7\2\u00d3\u00d7"+
+		"\58\35\2\u00d4\u00d5\7\32\2\2\u00d5\u00d8\58\35\2\u00d6\u00d8\3\2\2\2"+
 		"\u00d7\u00d4\3\2\2\2\u00d7\u00d6\3\2\2\2\u00d8\67\3\2\2\2\u00d9\u00dd"+
 		"\7\24\2\2\u00da\u00dc\5\4\3\2\u00db\u00da\3\2\2\2\u00dc\u00df\3\2\2\2"+
 		"\u00dd\u00db\3\2\2\2\u00dd\u00de\3\2\2\2\u00de\u00e0\3\2\2\2\u00df\u00dd"+

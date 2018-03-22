@@ -30,5 +30,5 @@ moreHashContent	: (COMA hashContent)*;
 expressionList : expression moreExpressions |;
 moreExpressions : (COMA expression)*;
 printExpression : PUTS PARIZQ expression PARDER;
-ifExpression : IF expression blockStatement (ELSE blockStatement |);
+ifExpression : IF expression blockStatement (ELSE blockStatement | );
 blockStatement : CORCHETEIZQ statement* CORCHETEDER;

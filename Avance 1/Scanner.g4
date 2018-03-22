@@ -22,9 +22,9 @@ PARCUADDER : ']';//parentesis derecho
 CORCHETEIZQ : '{';
 CORCHETEDER : '}';
 COMILLADOBLE : '"';
-INICIOCOMANI : '/*';//inicio de comentario anidado
-FINCOMANI : '*/';//fin de comentario anidado
-SALTOLINEA : '\n';
+//INICIOCOMANI : '/*';//inicio de comentario anidado
+//FINCOMANI : '*/';//fin de comentario anidado
+//SALTOLINEA : '\n';
 
 //Palabras reservadas
 IF : 'if';//expresion para reconocer un if
