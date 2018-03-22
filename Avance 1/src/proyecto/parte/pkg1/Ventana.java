@@ -57,45 +57,12 @@ public class Ventana extends javax.swing.JFrame {
         TextLineNumber tln = new TextLineNumber(txtCodigo);
         scroll.setRowHeaderView(tln);
 
-<<<<<<< HEAD
         MessageConsole mc = new MessageConsole(txtConsola);
         mc.redirectOut();
         mc.redirectErr(Color.RED, null);
 
-
-=======
         getLineColInformation();
-        
-        /*
-        JPanel gridCodigoYNumLinea = new JPanel();
-        //gridCodigoYNumLinea.setMaximumSize(new Dimension(this.getWidth(), this.getHeight()/2));
-        //gridCodigoYNumLinea.setMinimumSize(gridCodigoYNumLinea.getMaximumSize());
-        gridCodigoYNumLinea.setLayout(new GridLayout(1,2));
-        gridCodigoYNumLinea.add(scroll,BorderLayout.WEST);
-        gridCodigoYNumLinea.add(txtCodigo,BorderLayout.EAST);
-        
-        //JPanel gridConsola = new JPanel();
-        //gridConsola.setLayout(new GridLayout(1, 1));
-        //gridConsola.add(txtConsola,BorderLayout.CENTER);
-        
-        JPanel gridBotones = new JPanel();
-        gridBotones.setLayout(new GridLayout(1, 4));
-        gridBotones.add(btnInterpretarInstrucciones);
-        gridBotones.add(btnRun);
-        gridBotones.add(btnLoad);
-        gridBotones.add(btnAST);
-        
-        JPanel todos = new JPanel();
-        todos.add(new JScrollPane(gridCodigoYNumLinea));
-        //todos.add(gridConsola);
-        todos.add(gridBotones);
-        
-        this.setLayout(new BorderLayout());
-        this.add(todos,BorderLayout.CENTER);
-        //this.add(gridConsola,BorderLayout.AFTER_LAST_LINE);
-        //this.add(gridBotones,BorderLayout.AFTER_LAST_LINE);
-        */
->>>>>>> 6ee4a55f84ee227b72b2fcbbc3e5752baef50e84
+
     }
 
     
@@ -280,12 +247,7 @@ public class Ventana extends javax.swing.JFrame {
                 br.close();
                 txtCodigo.requestFocus();
             }
-<<<<<<< HEAD
             catch(Exception e2) { System.out.println(e2.getMessage()); }
-
-=======
-            catch(Exception e2) { txtConsola.append(e2.getMessage()); }
->>>>>>> 6ee4a55f84ee227b72b2fcbbc3e5752baef50e84
         }
         else if(result == JFileChooser.CANCEL_OPTION)
             System.out.println("Canceló!");

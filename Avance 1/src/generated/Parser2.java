@@ -1,4 +1,4 @@
-// Generated from C:/Users/Daniel-PC/Dropbox/Yo/TEC/Semestre 1 2018/Compi/Repositorio/Compiladores-/Avance 1\Parser2.g4 by ANTLR 4.7
+// Generated from E:/TEC/Semestre 1 2018/Compiladores/Proyecto/Compiladores/Avance 1\Parser2.g4 by ANTLR 4.7
 package generated;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
