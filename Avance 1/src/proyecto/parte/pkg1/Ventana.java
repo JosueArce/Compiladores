@@ -14,14 +14,19 @@ import java.io.*;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import javax.swing.*;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import javax.swing.text.Element;
+
 
 /**
  *
  * @author Daniel
  */
 public class Ventana extends javax.swing.JFrame {
-    
+
+    private JTextPane textPane = new JTextPane();
+
     File archivo;
     ParseTree tree;
     Parser2 parser;
@@ -50,6 +55,8 @@ public class Ventana extends javax.swing.JFrame {
         //JScrollPane scroll = new JScrollPane(txtCodigo);
         TextLineNumber tln = new TextLineNumber(txtCodigo);
         scroll.setRowHeaderView(tln);
+
+        getLineColInformation();
         
         /*
         JPanel gridCodigoYNumLinea = new JPanel();
@@ -111,6 +118,7 @@ public class Ventana extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtCodigo = new javax.swing.JTextPane();
         scroll = new javax.swing.JScrollPane(txtCodigo);
+        lblLine = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Analizador Sintáctico");
@@ -150,6 +158,8 @@ public class Ventana extends javax.swing.JFrame {
 
         scroll.setAutoscrolls(true);
 
+        lblLine.setText("Line: 0 - Column: 0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -158,23 +168,22 @@ public class Ventana extends javax.swing.JFrame {
                 .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRun, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAST, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(btnInterpretarInstrucciones)
-                        .addContainerGap(616, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnRun, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAST, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane3))
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblLine)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +201,9 @@ public class Ventana extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnInterpretarInstrucciones)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnInterpretarInstrucciones)
+                    .addComponent(lblLine))
                 .addGap(6, 6, 6))
         );
 
@@ -243,9 +254,12 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
         JFileChooser cargar = new JFileChooser();
-        cargar.showOpenDialog(null);
-        archivo = cargar.getSelectedFile();
-        if(archivo.getName()!=null){
+        int result = cargar.showSaveDialog(this);
+        if(result == JFileChooser.APPROVE_OPTION)
+        {
+            System.out.println("ACEPTÓ!");
+            cargar.showOpenDialog(null);
+            archivo = cargar.getSelectedFile();
             try
             {
                 String nombreArchivo = archivo.getName();
@@ -258,8 +272,9 @@ public class Ventana extends javax.swing.JFrame {
                 txtCodigo.requestFocus();
             }
             catch(Exception e2) { txtConsola.append(e2.getMessage()); }
-
         }
+        else if(result == JFileChooser.CANCEL_OPTION)
+            System.out.println("Canceló!");
 
     }//GEN-LAST:event_btnLoadActionPerformed
 
@@ -274,6 +289,37 @@ public class Ventana extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnASTActionPerformed
+
+
+
+    /*
+    * Permite obtener la fila y columna del cursor actual.
+    * Esta información fue obtenida de la siguiente página:
+    * https://stackoverflow.com/questions/5139995/java-column-number-and-line-number-of-cursors-current-position?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+    * El dia: 21/03/2018 - agradecimientos a Jigar Joshi por publicar la solución en stackoverflow
+    * */
+    private void getLineColInformation(){
+        this.textPane = this.txtCodigo;
+        textPane.addCaretListener(new CaretListener() {
+            @Override
+            public void caretUpdate(CaretEvent e) {
+                int pos = textPane.getCaretPosition();
+                Element map = textPane.getDocument().getDefaultRootElement();
+                int row = map.getElementIndex(pos);
+
+                Element lineElem = map.getElement(row);
+                int col = pos - lineElem.getStartOffset();
+
+                row+=1;
+
+                updateStatus(row,col);
+            }
+        });
+    }
+
+    private void updateStatus(int line,int col){
+        this.lblLine.setText("Line: "+line + "-  Column: "+col);
+    }
 
     /**
      * @param args the command line arguments
@@ -319,6 +365,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lblLine;
     private javax.swing.JScrollPane scroll;
     private javax.swing.JTextPane txtCodigo;
     private javax.swing.JTextArea txtConsola;
