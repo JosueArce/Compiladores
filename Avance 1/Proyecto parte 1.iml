@@ -9,6 +9,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="antlr-4.7.1-complete" level="project" />
     <orderEntry type="library" name="antlr-4.7.1-complete" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" name="antlr-4.7.1-complete (2)" level="project" />
+=======
+    <orderEntry type="library" name="antlr-4.7.1-complete" level="project" />
+>>>>>>> 415cad885d6bf83d0bed2e0b8d22cbf7b7f5a93d
   </component>
 </module>

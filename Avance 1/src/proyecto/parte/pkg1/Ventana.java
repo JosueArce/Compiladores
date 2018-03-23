@@ -61,9 +61,13 @@ public class Ventana extends javax.swing.JFrame {
         mc.redirectOut();
         mc.redirectErr(Color.RED, null);
 
+<<<<<<< HEAD
 
         getLineColInformation();
         
+=======
+        getLineColInformation();
+>>>>>>> 415cad885d6bf83d0bed2e0b8d22cbf7b7f5a93d
 
     }
 
@@ -250,7 +254,10 @@ public class Ventana extends javax.swing.JFrame {
                 txtCodigo.requestFocus();
             }
             catch(Exception e2) { System.out.println(e2.getMessage()); }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 415cad885d6bf83d0bed2e0b8d22cbf7b7f5a93d
         }
         else if(result == JFileChooser.CANCEL_OPTION)
             System.out.println("Canceló!");
