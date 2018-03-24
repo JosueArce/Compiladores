@@ -34,7 +34,7 @@ ELSE : 'else';
 RETURN : 'return';
 TRUE : 'true';
 FALSE : 'false';
-FN : 'fn' ID;//Posible solucion
+FN : 'fn';//Posible solucion
 PUTS : 'puts';
 LEN : 'len';
 FIRST : 'first';

@@ -47,7 +47,7 @@ public class Parser2 extends Parser {
 		null, "';'", "','", "'='", "'=>'", "'=<'", "'=='", "'>'", "'<'", "':'", 
 		"'+'", "'-'", "'*'", "'/'", "'('", "')'", "'['", "']'", "'{'", "'}'", 
 		"'\"'", "'if'", "'while'", "'let'", "'else'", "'return'", "'true'", "'false'", 
-		null, "'puts'", "'len'", "'first'", "'last'", "'rest'", "'push'"
+		"'fn'", "'puts'", "'len'", "'first'", "'last'", "'rest'", "'push'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, "PyCOMA", "COMA", "ASIGNACION", "MAYIGUAL", "MENIGUAL", "IGUAL", 

@@ -66,6 +66,7 @@ LINE_COMMENT=41
 'return'=25
 'true'=26
 'false'=27
+'fn'=28
 'puts'=29
 'len'=30
 'first'=31

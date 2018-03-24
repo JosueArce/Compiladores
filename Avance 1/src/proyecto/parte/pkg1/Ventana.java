@@ -210,11 +210,11 @@ public class Ventana extends javax.swing.JFrame {
         catch(Exception e){txtConsola.append("No hay archivo");}
 
         List<Token> lista = (List<Token>) scanner.getAllTokens();
-        /*
-        for (Token t : lista)
 
-            System.out.println(t.getType() + ": " + t.getText() + "\n");
-         */
+        /*for (Token t : lista)
+
+            System.out.println(t.getType() + ": " + t.getText() + "\n");*/
+
         scanner.reset();
 
         try{
