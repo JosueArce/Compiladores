@@ -51,10 +51,7 @@ public class Ventana extends javax.swing.JFrame {
         btnAST.setBorderPainted(false);
         btnAST.setToolTipText("Generar AST");
         //txtCodigo.setMinimumSize(new Dimension(200, 200));
-        
-        //JScrollPane scroll = new JScrollPane(txtCodigo);
-        TextLineNumber tln = new TextLineNumber(txtCodigo);
-        scroll.setRowHeaderView(tln);
+
 
         MessageConsole mc = new MessageConsole(txtConsola);
         mc.redirectOut();
@@ -62,16 +59,6 @@ public class Ventana extends javax.swing.JFrame {
         getLineColInformation();
 
     }
-
-    
-    public static int getLineAtCaret(JTextArea component)
-	{
-		int caretPosition = component.getCaretPosition();
-		Element root = component.getDocument().getDefaultRootElement();
-
-		return root.getElementIndex( caretPosition ) + 1;
-	}
-
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,7 +78,6 @@ public class Ventana extends javax.swing.JFrame {
         btnInterpretarInstrucciones = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtCodigo = new javax.swing.JTextPane();
-        scroll = new javax.swing.JScrollPane(txtCodigo);
         lblLine = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,20 +116,16 @@ public class Ventana extends javax.swing.JFrame {
         txtCodigo.setText("let age = 1;\nlet name = \"Monkey\";\nlet result = 10 * (20 / 2);\n\nlet myArray = [1, 2, 3, 4, 5];\n\nlet thorsten = {\"name\": \"Thorsten\", \"age\": 28};\n\nmyArray[0] // => 1\nthorsten[\"name\"] // => \"Thorsten\"\n\nlet add = fn(a, b) { return a + b; };\n\nlet fibonacci = fn(x) {\nif (x == 0) {\n0\n} else {\nif (x == 1) {\n1\n} else {\nfibonacci(x - 1) + fibonacci(x - 2);\n}\n}\n};\n");
         jScrollPane3.setViewportView(txtCodigo);
 
-        scroll.setAutoscrolls(true);
-
         lblLine.setText("Line: 0 - Column: 0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRun, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -151,21 +133,20 @@ public class Ventana extends javax.swing.JFrame {
                         .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAST, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addComponent(btnInterpretarInstrucciones)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblLine)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 530, Short.MAX_VALUE)
+                        .addComponent(lblLine))
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scroll)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -341,7 +322,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblLine;
-    private javax.swing.JScrollPane scroll;
     private javax.swing.JTextPane txtCodigo;
     private javax.swing.JTextArea txtConsola;
     // End of variables declaration//GEN-END:variables
