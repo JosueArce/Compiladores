@@ -13,7 +13,6 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import java.awt.*;
 import java.io.*;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
@@ -60,14 +59,7 @@ public class Ventana extends javax.swing.JFrame {
         MessageConsole mc = new MessageConsole(txtConsola);
         mc.redirectOut();
         mc.redirectErr(Color.RED, null);
-
-<<<<<<< HEAD
-
         getLineColInformation();
-        
-=======
-        getLineColInformation();
->>>>>>> 415cad885d6bf83d0bed2e0b8d22cbf7b7f5a93d
 
     }
 
@@ -221,9 +213,10 @@ public class Ventana extends javax.swing.JFrame {
         /*
         for (Token t : lista)
 
-            System.out.println(t.getType() + ":" + t.getText() + "\n");
+            System.out.println(t.getType() + ": " + t.getText() + "\n");
+         */
         scanner.reset();
-        */
+
         try{
             tree = parser.program();
             System.out.println("Compilacion Exitosa!");
@@ -254,10 +247,6 @@ public class Ventana extends javax.swing.JFrame {
                 txtCodigo.requestFocus();
             }
             catch(Exception e2) { System.out.println(e2.getMessage()); }
-<<<<<<< HEAD
-
-=======
->>>>>>> 415cad885d6bf83d0bed2e0b8d22cbf7b7f5a93d
         }
         else if(result == JFileChooser.CANCEL_OPTION)
             System.out.println("Canceló!");

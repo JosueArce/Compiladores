@@ -44,7 +44,7 @@ public class Parser2 extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "';'", "','", "'='", "'>='", "'<='", "'=='", "'>'", "'<'", "':'", 
+		null, "';'", "','", "'='", "'=>'", "'=<'", "'=='", "'>'", "'<'", "':'", 
 		"'+'", "'-'", "'*'", "'/'", "'('", "')'", "'['", "']'", "'{'", "'}'", 
 		"'\"'", "'if'", "'while'", "'let'", "'else'", "'return'", "'true'", "'false'", 
 		null, "'puts'", "'len'", "'first'", "'last'", "'rest'", "'push'"

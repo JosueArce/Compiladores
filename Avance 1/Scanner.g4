@@ -5,8 +5,8 @@ lexer grammar Scanner; //Gramatica para lexer
 PyCOMA : ';';//expresion regular para reconocer un';'
 COMA : ',';
 ASIGNACION : '=';
-MAYIGUAL : '>=';
-MENIGUAL : '<=';
+MAYIGUAL : '=>';
+MENIGUAL : '=<';
 IGUAL : '==';
 MAYOR : '>';
 MENOR : '<';
