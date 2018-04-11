@@ -1,7 +1,7 @@
 import generated.Parser2;
 import generated.Parser2BaseVisitor;
 
-public class miVisitor extends Parser2BaseVisitor {
+public class MiVisitor extends Parser2BaseVisitor {
 
     @Override
     public Object visitProgAST(Parser2.ProgASTContext ctx) {
