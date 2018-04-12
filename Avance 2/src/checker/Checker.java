@@ -21,7 +21,7 @@ public class Checker extends Parser2BaseVisitor{
             case 5:
                 return "Ese identificador ya fue declarado.";
             case 6:
-                return "Ese indetificador no ha sido declarado."
+                return "Ese indetificador no ha sido declarado.";
             case 7:
                 return "Error de tipos, valores no compatibles.";
             case 8:
